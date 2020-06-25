@@ -5,11 +5,11 @@ from .models import TinTuc, NoiDung, Video, TaiKhoan, Comment, Loai
 
 
 class TinTucAdmin(admin.ModelAdmin):
-    list_display = ('id', 'tieu_de', 'url_img', 'phan_loai')
+    list_display = ('id_tintuc', 'tieu_de', 'url_img', 'phan_loai')
 
 
 class NoiDungAdmin(admin.ModelAdmin):
-    list_display = ('tieude', 'noi_dung', 'url_imgNoiDung', 'url_video')
+    list_display = ('tieude', 'mo_bai', 'url_imgNoiDung', 'ket_bai')
 
 
 class VideoAdmin(admin.ModelAdmin):

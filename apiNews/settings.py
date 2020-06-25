@@ -122,4 +122,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-ALLOWED_HOSTS=["192.168.1.3", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS=["192.168.1.5", "localhost", "127.0.0.1"]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}

@@ -6,14 +6,14 @@ class GetTinTuc(serializers.ModelSerializer):
 
     class Meta:
         model = TinTuc
-        fields = ('tieu_de', 'url_img', 'mo_ta')
+        fields = ('id_tintuc', 'tieu_de', 'url_img', 'mo_ta')
 
 
 class GetNoidung(serializers.ModelSerializer):
 
     class Meta:
         model = NoiDung
-        fields = ('tieude', 'noi_dung', 'url_imgNoiDung', 'url_video')
+        fields = ('tieude', 'mo_bai', 'url_imgNoiDung', 'ket_bai')
 
 
 class GetIDTieuDe(serializers.Serializer):

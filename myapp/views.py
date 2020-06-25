@@ -20,11 +20,10 @@ class GetTinTucview(APIView):
 
 
 class GetNoiDungview(APIView):
-
     def get(self, request):
-        list_noidung = NoiDung.objects.all()
-        noidung = GetNoidung(list_noidung, many=True)
-        return Response(data=noidung.data, status=status.HTTP_200_OK)
+        list_tintuc = NoiDung.objects.all()
+        tintuc = GetNoidung(list_tintuc, many=True)
+        return Response(data=tintuc.data, status=status.HTTP_200_OK)
 
     def post(self, request):
         pk = GetIDTieuDe(data=request.data)

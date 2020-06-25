@@ -15,14 +15,15 @@ class Loai(models.Model):
 
 
 class TinTuc(models.Model):
+    id_tintuc = models.CharField(primary_key=True ,max_length=255, verbose_name='id')
     tieu_de = models.CharField(max_length=255, verbose_name='Tiêu đề')
     url_img = models.CharField(max_length=255, verbose_name='Link ảnh')
     mo_ta = models.CharField(max_length=1000, verbose_name='Mô tả')
     phan_loai = models.ForeignKey(Loai, on_delete=models.CASCADE, verbose_name='Loại')
     gio_dang = models.TimeField
 
-    def __int__(self):
-        return self.id
+    def __str__(self):
+        return self.id_tintuc
 
     class Meta:
         verbose_name = 'Tiêu đề'
@@ -31,9 +32,9 @@ class TinTuc(models.Model):
 
 class NoiDung(models.Model):
     tieude = models.ForeignKey(TinTuc, on_delete=models.CASCADE, verbose_name='ID tiêu đề')
-    noi_dung = models.CharField(max_length=10000, verbose_name='nội dung')
+    mo_bai = models.CharField(max_length=10000, verbose_name='mở bài')
     url_imgNoiDung = models.CharField(max_length=255, verbose_name="Ảnh nội dung")
-    url_video = models.CharField(max_length=355, verbose_name='Link video', null=True)
+    ket_bai = models.CharField(max_length=100000, verbose_name='thân bài', null=True)
 
     class Meta:
         verbose_name = 'Nội dung'
